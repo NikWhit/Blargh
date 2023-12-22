@@ -9,5 +9,16 @@ Blogs and copywriting have a tendency to ramble on. A newer phrase for this is "
 ## Description
 
 
+## Install
+
+## Usage
+
+## Picture
+
+
+## Credits
+I credit those who wrote the code to the lesson materials. 
+
+
 
 
