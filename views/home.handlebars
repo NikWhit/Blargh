@@ -1,0 +1,17 @@
+<div class="header">
+    <div class="logo">
+        <h1>Techy Blargh</h1>
+    </div>
+</div>
+
+{{#each postsData as |post|}}
+<div class="card ms-3 me-3">
+    <div class="card-header d-flex">
+        <a class="d-flex flex-grow-1" href="/post/{{post.id}}"><h5>{{post.title}}</h5></a>
+        <span class="d-flex justify-content-end">So Says I {{post.user.username}} on {{formateDate.post.updatedAt}}</span>
+    </div>
+    <div class="card-body">
+        {{post.post}}
+    </div>
+</div>
+{{/each}}

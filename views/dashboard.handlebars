@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="logo">
+        <h1>The Mast Dashboard</h1>
+    </div>
+</div>
+{{#if postsData}}
+{{#each postsData as |post|}}
+<div class="card m-3">
+    <div class="card-header">
+        <a  href="/post-update/{{post.id}}"><h5>{{post.title}}</h5></a>
+        <span class="d-flex justify-content-end">So Says I {{post.user.username}} on {{formateDate.post.updatedAt}}</span>
+    </div>
+    </div>
+{{/each}}
+{{else}}
+<div class='row'>
+    <div class='col-12 text-center mt-3'>
+        <a href="/post-new" class="create-post">New Post</a>
+</div>
+</div>
