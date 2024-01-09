@@ -1,7 +1,7 @@
 // import models
 const User = require('./User');
 const Post = require('./Post');
-const Comments = require('./Comment');
+const Comments = require('./Comments');
 
 //Post owned by user
 Post.belongsTo(User, {

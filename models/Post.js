@@ -33,6 +33,6 @@ Post.init(
   }
 );
 
-module.exports = Project;
+module.exports = Post;
 
 // Credit goes to the person who made the code to the 28-MiniProject for MVC
