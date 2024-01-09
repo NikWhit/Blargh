@@ -3,8 +3,8 @@
         <h1>The Mast Dashboard</h1>
     </div>
 </div>
-{{#if postsData}}
-{{#each postsData as |post|}}
+{{#if postData}}
+{{#each postData as |post|}}
 <div class="card m-3">
     <div class="card-header">
         <a  href="/post-update/{{post.id}}"><h5>{{post.title}}</h5></a>
