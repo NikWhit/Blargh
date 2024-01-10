@@ -9,11 +9,26 @@ Blogs and copywriting have a tendency to ramble on. A newer phrase for this is "
 I apologize for being punchy. Its late, I'm exhausted and pushing very hard to get this completed. 
 
 ## Description
-
+This is a blog site. When logged in users can utilize it kind of like reddit or twitter. they can make posts and comment on posts. 
 
 ## Install
+There are essential dependencies. Run your terminal with the cmd, "npm run install", or "npm i".
+
 
 ## Usage
+Make sure you have mysql installed.
+
+in the terminal you'll do this:
+mysql -u root
+source db/schema.sql
+show databases;
+use techy_blargh_db
+exit
+- you'll then need to seed the database.
+node seeds/index.js
+-then start the server.
+npm run start
+-then cmd click the PORT hyperlink. (should run on PORT 3003)
 
 ## Picture
 
