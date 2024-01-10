@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
 
 class Post extends Model {}
 
@@ -7,28 +8,33 @@ Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
-          model: 'user',
+          model: User,
           key: 'id',
         },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       },
     title: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     post: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
 
   },
   {
     sequelize,
     timestamps: false,
-    underscored: true,
     modelName: 'post',
   }
 );

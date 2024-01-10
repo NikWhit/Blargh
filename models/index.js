@@ -1,7 +1,7 @@
 // import models
 const User = require('./User');
 const Post = require('./Post');
-const Comments = require('./Comments');
+const Comment = require('./Comment');
 
 //Post owned by user
 Post.belongsTo(User, {
@@ -13,28 +13,28 @@ User.hasMany(Post, {
   onDelete: 'CASCADE'
 });
 
-//Commends belonging to the user
-Comments.belongsTo(User, {
+//Comments belonging to the user
+Comment.belongsTo(User, {
     foreignKey: 'user_id',
-})
+});
 
 //User many comments
-User.hasMany(Comments, {
+User.hasMany(Comment, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
 //comments to posts
-Comments.belongsTo(Post, {
+Comment.belongsTo(Post, {
     foreignKey: 'post_id',
 });
 //post to many comments
-Post.hasMany(Comments, {
+Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Post, Comments };
+module.exports = { User, Post, Comment };
 
 
 
