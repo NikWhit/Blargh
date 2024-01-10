@@ -31,6 +31,7 @@ npm run start
 -then cmd click the PORT hyperlink. (should run on PORT 3003)
 
 ## Picture
+<img width="1586" alt="Screenshot 2024-01-09 at 5 32 54 PM" src="https://github.com/NikWhit/Blargh/assets/135679785/dbbfd75b-2121-4a2a-b796-eeeac43a4163">
 
 
 ## Credits
