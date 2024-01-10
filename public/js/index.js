@@ -23,7 +23,7 @@ const response = await fetch(`/api/post`, {
         const title = document.querySelector('#title').value.trim();
         const post = document.querySelector('#post').value.trim();
     //post the post
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/post${post_Id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, post }),
         headers: {
@@ -42,8 +42,14 @@ const response = await fetch(`/api/post`, {
     const deletePost = async (event) => {
         event.preventDefault();
 
+        const confirmed = confirm('You Certain?');
+        if (!confirmed) {
+            return;
+        }
+
+
     //delete the post
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/post${post_Id}`, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json',
@@ -61,7 +67,7 @@ const response = await fetch(`/api/post`, {
             const comment = document.querySelector('#comment').value.trim();
 
 //sub post
-        const response = await fetch(`/api/comment`, {
+        const response = await fetch(`/api/comment/${post_Id}`, {
             method: 'POST',
             body: JSON.stringify({comment}),
             headers: {
@@ -74,19 +80,16 @@ const response = await fetch(`/api/post`, {
                 alert('Failed');
             }
             }
+document.addEventListener('DOMContentLoaded', () => { 
 document
-    .querySelector('#new-post')
-    .addEventListener('submit', createPost);
+    .querySelector('#new-post').addEventListener('submit', createPost);
 
 document
-    .querySelector('#update-post')
-    .addEventListener('submit', updatePost);
+    .querySelector('#update-post').addEventListener('submit', updatePost);
 
 document
-    .querySelector('#delete-post')
-    .addEventListener('click', deletePost);
+    .querySelector('#delete-post').addEventListener('click', deletePost);
 
 document
-    .querySelector('#create-comment')
-    .addEventListener('submit', createComment);
-        
+    .querySelector('#create-comment').addEventListener('submit', createComment);
+});
