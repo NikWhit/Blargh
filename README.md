@@ -39,6 +39,8 @@ I credit those who wrote the code to the lesson materials.
 UofU-VIRT-FSF-PT-06-2023-U-LOLC-main/14-MVC/01-Activities/28-Stu_Mini-Project
     This is where I pulled a majority of my code and organization for the code. 
 
+I will admit to using some ChatGPT as I got pretty lost. Mostly on some structure issues and adapting the 14-MVC mini project to meet the needs of what 
+I've been trying to accomplish. 
 
 ## Credit to AI Help for Order of Operations
 I also used ChatGPT. It gave me a cognizant order of operations. Here are is a copy/paste of the exact message it returned me. 
