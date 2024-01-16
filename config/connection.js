@@ -9,7 +9,7 @@ sequelize = new Sequelize(
     {
       host: process.env.DB_HOST,
       dialect: 'mysql',
-      port: process.env.DV_PORT
+      port: process.env.DB_PORT
     }
   );
 

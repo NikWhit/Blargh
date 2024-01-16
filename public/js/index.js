@@ -4,7 +4,7 @@ const createPost = async (event) => {
     const title = document.querySelector('#title').value;
     const post = document.querySelector('#post').value;
 //post the post
-const response = await fetch(`/api/post`, {
+const response = await fetch(`/api/post`, { 
     method: 'POST',
     body: JSON.stringify({ title, post }),
     headers: {
@@ -81,6 +81,13 @@ const response = await fetch(`/api/post`, {
             }
             }
 document.addEventListener('DOMContentLoaded', () => { 
+    console.log('DOM Loaded!');
+    const loginForms = document.querySelectorAll('.login-form');
+    console.log('Login Forms: ', loginForms);
+    loginForms.forEach(form => {
+        form.addEventListener('submit', loginFormHandler);
+    });
+
 document
     .querySelector('#new-post').addEventListener('submit', createPost);
 

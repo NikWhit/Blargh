@@ -1,15 +1,17 @@
-<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" 
+{{!-- href="./css/login.css"> --}}
+{{!-- I don't have a login.css --}}
 <div class="card">
   <div class="col-md-6, card-header">
     <h2>Login</h2></div>
 <div class='card-body'>
-    <form class="form login-form">
+    <form class="login-form">
       <div class="form-group">
 
-        <input class="form-input" type="text" id="name-signup" placeholder="Username"/>
+        <input class="form-input" type="text" id="name-signup" placeholder="Username" autocomplete="current-username"/>
       </div>
       <div class="form-group">
-        <input class="form-input" type="password" id="password-login" placeholder="Password"/>
+        <input class="form-input" type="password" id="password-login" placeholder="Password" autocomplete="current-password"/>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">login</button>
@@ -19,9 +21,8 @@
   <div class="col-md-6">
     <h2>Make yer mark, Matey</h2>
   </div>
-  </form>
-  <p><a href="/signup:">Sign Up</a></p>
+  <p><a href="signup.handlebars">Sign Up</a></p>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="../public/js/login.js"></script>
 {{!-- straight up taken from the class material and student mini project --}}

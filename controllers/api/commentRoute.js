@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Post, User, Comments } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 //Post yer Comment (Sorry again for the pirate lingo... I'm wicked tired)
 router.get('/:id', async (req, res) => {
 try {
-    const comment = await Comments.findByPk(req.params.id,{
+    const comment = await Comment.findByPk(req.params.id,{
         include: [{ model: User }, {model: Post }]});
         const commentData = comment.get({plain:true});
         res.status(200).json(commentData);
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 
     res.status(200).json(post);
     } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
     }
 });
 
@@ -35,7 +35,7 @@ router.post('/:id', async (req, res) => {
     try {
             req.body.post_id = req.params.id;
             req.body.user_id = req.session.user_id;
-            const comment = await Comments.create(req.body);
+            const comment = await Comment.create(req.body);
             res.status(200).json(comment);
                 } catch (err) {
             res.status(500).json(err);

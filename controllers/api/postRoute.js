@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Post, User, Comments } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 //Post yer post
-router.post('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
 try {
     const post = await Post.findByPk(req.params.id,{
-        include: [{ model: User }, {model: Comments }]});
+        include: [{ model: User }, {model: Comment }]});
         const postData = post.get({plain:true});
         res.status(200).json(postData);
     } catch (err) {

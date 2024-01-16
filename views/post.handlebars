@@ -7,32 +7,35 @@
 <div class="card ms-3 me-3">
     <div class="card-header d-flex">
         <a class="d-flex flex-grow-1" href="/post/{{postData.id}}"><h5>{{postData.title}}</h5></a>
-        <span class="d-flex justify-content-end">So Says I {{postData.user.username}} on {{formateDate.postData.updatedAt}}</span>
+        <span class="d-flex justify-content-end">So Says I {{postData.user.username}} on {{formatDate.postData.updatedAt}}</span>
     </div>
     <div class="card-body">
         {{postData.post}}
     </div>
 </div>
+
 {{#each commentsData as |comment|}}
 <div class="card ms-3 me-3">
 <div class="card-body">
     <p>{{comment.comment}}</p>
         <p>{{comment.user.username}}, {{formateDate comment.updatedAt}}</p>
 </div></div>
-{{/each}}{{#if loggedIn}}
+{{/each}}
+
+{{#if loggedIn}}
 <div class="card ms-3 me-3">
 <div class="card-body">
     <h4>Comment</h4>
-    < id="#create-comment">
+    <form id="create-comment">
         <textarea class="form-control" id="comment" placeholder="What Ya Saying Sonny?"></textarea>
+            <button type="submit" class="btn mt-2">FireAway</button>
+        </form>
     </div>
-    <button type="submit" class="btn mt-2">FireAway</button>
-    </form>
 </div>
+
 {{else}}
 <div class="card ms-3 me-3">
 <div class="card-header d-flex"></div>
 <p><a href="/login">Login to make a statement</a></p>
-</div>
 </div>
 {{/if}}

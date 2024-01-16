@@ -22,7 +22,7 @@ in the terminal you'll do this:
 mysql -u root
 source db/schema.sql
 show databases;
-use techy_blargh_db
+use tech_blargh_db
 exit
 - you'll then need to seed the database.
 node seeds/index.js
