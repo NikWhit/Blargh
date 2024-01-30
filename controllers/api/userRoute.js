@@ -20,22 +20,20 @@ router.post('/', async (req, res) => {
 
 //User route for login/out pathways
 router.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    console.log('Received login request:', username, password);
     try {
-    const userData = await User.findOne({ where: { email: req.body.username } });
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
-        res
-        status(400)
-        .json({ message: 'Try again or you walk the plank' });
+        res.status(400).json({ message: 'Try again or you walk the plank' });
         return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-        res
-        .status(400)
-        .json({ message: 'careful matey, try again' });
+        res.status(400).json({ message: 'careful matey, try again' });
         return;
     }
     req.session.save(() => {
